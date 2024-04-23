@@ -6,6 +6,15 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Welcome!</p>
+    <a href="/new">Send a message</a>
+    <h2>See what people are saying!</h2>
+    <div>
+      <% messages.forEach((message) => { %>
+        <p>Name: <%= message.user %></p>
+        <p>Message: <%= message.text %></p>
+        <p>Date added: <%= message.added %></p>
+      <% }) %>
+      </div>
   </body>
 </html>
