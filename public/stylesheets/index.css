@@ -10,7 +10,7 @@ a {
 
 header {
   padding: 1rem;
-  background-color: #3c6e71;
+  background-color: #274c77;
   color: white;
   grid-row: 1 / 2;
   display: flex;
@@ -23,17 +23,17 @@ header {
 }
 
 main {
-  background-color: #d9d9d9;
+  background-color: #e7ecef;
   grid-row: 2 / 3;
 }
 
 .board {
   height: 100%;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .sidebar {
@@ -58,9 +58,10 @@ main {
 }
 
 .messages {
-  padding: 1rem;
+  padding: 2rem;
   background-color: white;
   border-radius: 0.5rem;
+  box-shadow: 0px 5px 15px #c7c7c7;
   grid-column: 2 / 3;
   display: flex;
   flex-direction: column;
@@ -77,7 +78,7 @@ main {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #3c6e71;
+  background-color: #274c77;
   grid-row: 3 / 4;
 }
 
