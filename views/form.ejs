@@ -2,22 +2,32 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link rel='stylesheet' href='/stylesheets/form.css' />
   </head>
   <body>
-    <h1>Send a Message</h1>
-    <form method="post" action="/new">
-      <h2>What do you want to say?</h2>
-      <div>
-        <label for=userName>Name:</label>
-        <input type="text" id=userName name=userName required>
-      </div>
-      <div>
-        <label for="messageText">Message:</label>
-        <input type="text" id="messageText" name="messageText" required>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-    <a href="/">Main page</a>
+    <header>
+      <a href="/">
+        <img class="logo" src="/images/logo.svg" alt="Message board home page">
+      </a>
+      <h1><%= title %></h1>
+    </header>
+    <main>
+      <form method="post" action="/new">
+        <h2>Send a message</h2>
+        <div class="field">
+          <label for=userName>Name:</label>
+          <input type="text" id=userName name=userName minlength="1" maxlength="30" required>
+        </div>
+        <div class="field">
+          <label for="messageText">Message:</label>
+          <textarea id="messageText" name="messageText" rows="5" cols="30" required></textarea>
+        </div>
+        <button class="submit" type="submit">Submit</button>
+      </form>
+    </main>
+    <footer>
+      <a href="https://github.com/hannahkim313">Made by Hannah Kim</a>
+    </footer>
   </body>
 </html>

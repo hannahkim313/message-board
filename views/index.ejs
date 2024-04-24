@@ -2,19 +2,52 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome!</p>
-    <a href="/new">Send a message</a>
-    <h2>See what people are saying!</h2>
-    <div>
-      <% messages.forEach((message) => { %>
-        <p>Name: <%= message.user %></p>
-        <p>Message: <%= message.text %></p>
-        <p>Date added: <%= message.added %></p>
-      <% }) %>
-      </div>
+    <header>
+      <a href="/">
+        <img class="logo" src="/images/logo.svg" alt="Message board home page">
+      </a>
+      <h1><%= title %></h1>
+    </header>
+    <main>
+      <h2 class="hidden">Board layout</h2>
+      <section class="board">
+        <h3 class="hidden">Options</h3>
+        <div class="sidebar">
+          <p>
+            Welcome!
+            <br>
+            <br>
+            This is a simple message board where anyone can post
+            messages. Feel free to submit a message by clicking the button
+            below!
+          </p>
+          <a href="/new">Submit a message</a>
+        </div>
+        <h3 class="hidden">Messages</h2>
+        <div class="messages">
+          <% messages.forEach((message) => { %>
+            <div>
+              <p>
+                <b>Name</b>: <%= message.user %>
+              </p>
+              <p>
+                <b>Message</b>: <%= message.text %>
+              </p>
+              <p>
+                <b>Date added</b>: <%= message.added %>
+              </p>
+            </div>
+            <div class="border"></div>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a href="https://github.com/hannahkim313">Made by Hannah Kim</a>
+    </footer>
   </body>
 </html>
