@@ -28,6 +28,7 @@ main {
   grid-row: 2 / 3;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 form {
@@ -78,4 +79,10 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    justify-content: center;
+  }
 }
