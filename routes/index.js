@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const title = 'Message Board';
-
 const messages = [
   {
     text: 'Hi there!',
@@ -10,27 +8,30 @@ const messages = [
     added: new Date(),
   },
   {
-    text: 'Hello world!',
+    text: 'Hello World!',
     user: 'Charles',
     added: new Date(),
   },
 ];
 
-router.get('/', function (req, res) {
-  res.render('index', { title: title, messages: messages });
+// Routes
+router.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Message Board',
+    messages: messages,
+  });
 });
 
-router.get('/new', function (req, res) {
-  res.render('form', { title: title });
+router.get('/new', (req, res) => {
+  res.render('form', { title: 'Message Board' });
 });
 
-router.post('/new', function (req, res) {
+router.post('/new', (req, res) => {
   messages.push({
     text: req.body.messageText,
     user: req.body.userName,
     added: new Date(),
   });
-
   res.redirect('/');
 });
 
